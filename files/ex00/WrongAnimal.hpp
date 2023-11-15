@@ -19,6 +19,7 @@ class WrongAnimal
 {
 	protected:
 		std::string type;
+
 	public:
 		WrongAnimal(void);
 		WrongAnimal(std::string type);

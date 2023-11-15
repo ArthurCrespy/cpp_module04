@@ -19,6 +19,7 @@ class Animal
 {
 	protected:
 		std::string type;
+
 	public:
 		Animal(void);
 		Animal(std::string type);
