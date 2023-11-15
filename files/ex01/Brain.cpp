@@ -23,7 +23,7 @@ Brain::Brain(Brain const &src)
 	*this = src;
 }
 
-Brain::~Brain()
+Brain::~Brain(void)
 {
 	std::cout << "Brain destroyed" << std::endl;
 }

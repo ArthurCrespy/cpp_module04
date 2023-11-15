@@ -30,8 +30,7 @@ class Animal
 		Animal &operator=(Animal const &rhs);
 
 		std::string getType() const;
-
-		void setType(std::string type);
+		void        setType(std::string type);
 
 		virtual void makeSound() const;
 };

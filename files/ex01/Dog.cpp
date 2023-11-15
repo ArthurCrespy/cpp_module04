@@ -15,6 +15,7 @@
 Dog::Dog(void) : Animal("Dog")
 {
 	std::cout << "Dog default constructor called" << std::endl;
+	brain = new Brain();
 }
 
 Dog::Dog(Dog const &src) : Animal()
@@ -23,8 +24,9 @@ Dog::Dog(Dog const &src) : Animal()
 	*this = src;
 }
 
-Dog::~Dog()
+Dog::~Dog(void)
 {
+	delete (brain);
 	std::cout << "Dog destructor called" << std::endl;
 }
 
@@ -34,6 +36,7 @@ Dog &Dog::operator=(const Dog &rhs)
 	if (this != &rhs)
 	{
 		setType(rhs.getType());
+		brain = new Brain(*rhs.brain);
 	}
 	return (*this);
 }

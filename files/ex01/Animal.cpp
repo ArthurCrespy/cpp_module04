@@ -22,12 +22,13 @@ Animal::Animal(std::string type) : type(type)
 	std::cout << "Animal name constructor called" << std::endl;
 }
 
-Animal::Animal(Animal const &src) : type(src.getType())
+Animal::Animal(Animal const &src)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
+	*this = src;
 }
 
-Animal::~Animal()
+Animal::~Animal(void)
 {
 	std::cout << "Animal destructor called" << std::endl;
 }
@@ -36,9 +37,7 @@ Animal &Animal::operator=(Animal const &rhs)
 {
 	std::cout << "Animal assignation operator called" << std::endl;
 	if (this != &rhs)
-	{
 		setType(rhs.getType());
-	}
 	return (*this);
 }
 
