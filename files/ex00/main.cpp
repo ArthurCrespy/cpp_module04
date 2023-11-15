@@ -36,5 +36,11 @@ int main()
 	l->makeSound();
 	k->makeSound();
 
+//	delete meta;
+//	delete j;
+//	delete i;
+//	delete k;
+//	delete l;
+
 	return 0;
 }

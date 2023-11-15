@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat(void) : Animal("Cat")
 {
 	std::cout << "Cat default constructor called" << std::endl;
 }
@@ -23,7 +23,7 @@ Cat::Cat(Cat const &src) : Animal()
 	*this = src;
 }
 
-Cat::~Cat()
+Cat::~Cat(void)
 {
 	std::cout << "Cat destructor called" << std::endl;
 }
@@ -32,9 +32,7 @@ Cat &Cat::operator=(Cat const &rhs)
 {
 	std::cout << "Cat assignation operator called" << std::endl;
 	if (this != &rhs)
-	{
 		setType(getType());
-	}
 	return (*this);
 }
 

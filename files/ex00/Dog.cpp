@@ -23,7 +23,7 @@ Dog::Dog(Dog const &src) : Animal()
 	*this = src;
 }
 
-Dog::~Dog()
+Dog::~Dog(void)
 {
 	std::cout << "Dog destructor called" << std::endl;
 }
@@ -32,9 +32,7 @@ Dog &Dog::operator=(const Dog &rhs)
 {
 	std::cout << "Dog assignation operator called" << std::endl;
 	if (this != &rhs)
-	{
 		setType(rhs.getType());
-	}
 	return (*this);
 }
 
