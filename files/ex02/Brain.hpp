@@ -19,6 +19,7 @@ class Brain
 {
 	private:
 		std::string ideas[100];
+
 	public:
 		Brain(void);
 		Brain(Brain const &src);
@@ -27,8 +28,7 @@ class Brain
 		Brain &operator=(Brain const &rhs);
 
 		std::string getIdea(int i) const;
-
-		void setIdea(int i, std::string idea);
+		void        setIdea(int i, std::string idea);
 };
 
 #endif

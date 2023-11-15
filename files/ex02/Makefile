@@ -13,7 +13,7 @@
 NAME        := abstract
 
 SRCS		:= \
-			Animal.cpp \
+			AAnimal.cpp \
 			Brain.cpp \
 			Cat.cpp \
 			Dog.cpp \
