@@ -22,6 +22,7 @@ int main()
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
+	std::cout << meta->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
@@ -36,11 +37,11 @@ int main()
 	l->makeSound();
 	k->makeSound();
 
-//	delete meta;
-//	delete j;
-//	delete i;
-//	delete k;
-//	delete l;
+	delete meta;
+	delete j;
+	delete i;
+	delete k;
+	delete l;
 
 	return 0;
 }
