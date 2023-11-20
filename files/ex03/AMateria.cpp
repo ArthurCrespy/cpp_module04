@@ -5,29 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 15:09:31 by acrespy           #+#    #+#             */
-/*   Updated: 2023/06/14 15:59:54 by acrespy          ###   ########.fr       */
+/*   Created: 2023/11/20 08:56:30 by acrespy           #+#    #+#             */
+/*   Updated: 2023/11/20 08:56:30 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(void) : type("Default")
+AMateria::AMateria(void) : _type("default")
 {
 	std::cout << "AMateria default constructor called" << std::endl;
 }
 
-AMateria::AMateria(std::string const &type) : type(type)
+AMateria::AMateria(std::string type) : _type(type)
 {
-	std::cout << "AMateria name constructor called" << std::endl;
-}
+	std::cout << "AMateria name constructor called" << std::endl;}
 
-AMateria::AMateria(AMateria const &src) : type(src.getType())
+AMateria::AMateria(AMateria const &src)
 {
 	std::cout << "AMateria copy constructor called" << std::endl;
+	*this = src;
 }
 
-AMateria::~AMateria()
+AMateria::~AMateria(void)
 {
 	std::cout << "AMateria destructor called" << std::endl;
 }
@@ -36,29 +36,16 @@ AMateria &AMateria::operator=(AMateria const &rhs)
 {
 	std::cout << "AMateria assignation operator called" << std::endl;
 	if (this != &rhs)
-	{
 		setType(rhs.getType());
-	}
 	return (*this);
 }
 
 std::string const &AMateria::getType() const
 {
-	return (this->type);
+	return (this->_type);
 }
 
-void AMateria::setType(std::string type)
+void AMateria::setType(std::string const &type)
 {
-	this->type = type;
-}
-
-void AMateria::use(ICharacter &target)
-{
-	(void)target; 
-	std::cout << "Bloup Bloup" << std::endl;
-}
-
-AMateria* AMateria::clone() const
-{
-	return (new AMateria(*this));
+	this->_type = type;
 }

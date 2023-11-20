@@ -10,14 +10,19 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME        := abstract
+NAME        := interface
 
 SRCS		:= \
-			Animal.cpp \
+			AAnimal.cpp \
+			AMateria.cpp \
 			Brain.cpp \
 			Cat.cpp \
+			Character.cpp \
+			Cure.cpp \
 			Dog.cpp \
+			Ice.cpp \
 			main.cpp \
+			MateriaSource.cpp \
 			WrongAnimal.cpp \
 			WrongCat.cpp
 

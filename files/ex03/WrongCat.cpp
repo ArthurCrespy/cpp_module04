@@ -12,7 +12,7 @@
 
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat() : WrongAnimal("WrongCat")
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
 {
 	std::cout << "WrongCat default constructor called" << std::endl;
 }
@@ -23,7 +23,7 @@ WrongCat::WrongCat(WrongCat const &src) : WrongAnimal()
 	*this = src;
 }
 
-WrongCat::~WrongCat()
+WrongCat::~WrongCat(void)
 {
 	std::cout << "WrongCat destructor called" << std::endl;
 }

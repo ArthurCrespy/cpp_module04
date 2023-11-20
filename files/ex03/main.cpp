@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
@@ -18,23 +18,28 @@
 
 int main(void)
 {
-	void *ptr[100];
+//	AAnimal animal;
+	AAnimal *zoo[10];
 
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		if (i % 2 == 0)
-			ptr[i] = new Dog();
+			zoo[i] = new Dog();
 		else
-			ptr[i] = new Cat();
+			zoo[i] = new Cat();
 	}
 
-	for (int i = 0; i < 100; i++)
-	{
-		(static_cast<Animal *>(ptr[i]))->makeSound();
-	}
+	for (int i = 0; i < 10; i++)
+		zoo[i]->makeSound();
 
-	for (int i = 0; i < 100; i++)
-	{
-		delete (static_cast<Animal *>(ptr[i]));
-	}
+	for (int i = 0; i < 10; i++)
+		delete zoo[i];
+
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
+
+	delete j;//should not create a leak
+	delete i;
+
+	return (0);
 }

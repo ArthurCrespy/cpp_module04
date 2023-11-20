@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 15:09:31 by acrespy           #+#    #+#             */
-/*   Updated: 2023/06/14 15:59:54 by acrespy          ###   ########.fr       */
+/*   Created: 2023/11/20 09:31:23 by acrespy           #+#    #+#             */
+/*   Updated: 2023/11/20 09:31:23 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-# include <iostream>
+# include "AMateria.hpp"
 
-class Brain
+class Cure : public AMateria
 {
 	private:
-		std::string ideas[100];
+		std::string _type;
 
 	public:
-		Brain(void);
-		Brain(Brain const &src);
-		~Brain(void);
+		Cure(void);
+		Cure(std::string const &type);
+		Cure(Cure const &src);
+		~Cure(void);
 
-		Brain &operator=(Brain const &rhs);
+		Cure &operator=(Cure const &rhs);
 
-		std::string getIdea(int i) const;
-		void        setIdea(int i, std::string idea);
+		std::string const &getType() const;
+		void setType(std::string const &type);
+
+		Cure *clone() const;
+		void use(ICharacter& target);
 };
+
 
 #endif

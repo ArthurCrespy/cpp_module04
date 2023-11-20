@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acrespy <acrespy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 15:09:31 by acrespy           #+#    #+#             */
-/*   Updated: 2023/06/14 15:59:54 by acrespy          ###   ########.fr       */
+/*   Created: 2023/11/20 09:02:41 by acrespy           #+#    #+#             */
+/*   Updated: 2023/11/20 09:02:41 by acrespy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-# include <iostream>
+# include "AMateria.hpp"
 
-class Brain
+class Ice : public AMateria
 {
 	private:
-		std::string ideas[100];
+		std::string _type;
 
 	public:
-		Brain(void);
-		Brain(Brain const &src);
-		~Brain(void);
+		Ice(void);
+		Ice(std::string const &type);
+		Ice(Ice const &src);
+		~Ice(void);
 
-		Brain &operator=(Brain const &rhs);
+		Ice &operator=(Ice const &rhs);
 
-		std::string getIdea(int i) const;
-		void        setIdea(int i, std::string idea);
+		std::string const &getType() const;
+		void setType(std::string const &type);
+
+		Ice *clone() const;
+		void use(ICharacter& target);
 };
 
 #endif
