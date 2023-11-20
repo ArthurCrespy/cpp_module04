@@ -25,14 +25,14 @@ class AAnimal
 		AAnimal(void);
 		AAnimal(std::string type);
 		AAnimal(AAnimal const &src);
-		virtual ~AAnimal() = 0;
+		virtual ~AAnimal(void);
 
 		AAnimal &operator=(AAnimal const &rhs);
 
 		std::string getType() const;
 		void       setType(std::string type);
 
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 };
 
 #endif
