@@ -23,7 +23,11 @@ class Character : public ICharacter
 		AMateria *_inventory[4];
 
 	public:
+		Character(void);
+		Character(std::string name);
+		Character(Character const &src);
 		~Character(void);
+
 		Character &operator=(Character const &rhs);
 
 		std::string const &getName() const;
@@ -32,9 +36,9 @@ class Character : public ICharacter
 		void setName(std::string name);
 		void setSlot(int slot, AMateria const &m);
 
-		void equip(AMateria *m) = 0;
-		void unequip(int idx) = 0;
-		void use(int idx, ICharacter& target) = 0;
+		void equip(AMateria *m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
 };
 
 #endif

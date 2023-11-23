@@ -24,7 +24,7 @@ SRCS		:= \
 			main.cpp \
 			MateriaSource.cpp \
 			WrongAnimal.cpp \
-			WrongCat.cpp
+			WrongCat.cpp \
 
 OBJ_DIR     := .objs
 OBJS 		:= ${SRCS:%.cpp=${OBJ_DIR}/%.o}

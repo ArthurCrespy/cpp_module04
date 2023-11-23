@@ -12,7 +12,7 @@
 
 #include "Ice.hpp"
 
-Ice::Ice(void) : AMateria("ice"), _type("ice")
+Ice::Ice(void) : AMateria("ice")
 {
 	std::cout << "Ice default constructor called" << std::endl;
 }

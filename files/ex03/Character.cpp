@@ -12,6 +12,24 @@
 
 #include "Character.hpp"
 
+Character::Character(void)
+{
+	std::cout << "Character default constructor called" << std::endl;
+}
+
+Character::Character(std::string name) : _name(name)
+{
+	std::cout << "Character name constructor called" << std::endl;
+	for (int i = 0; i < 4; i++)
+		this->_inventory[i] = NULL;
+}
+
+Character::Character(Character const &src)
+{
+	std::cout << "Character copy constructor called" << std::endl;
+	*this = src;
+}
+
 Character::~Character(void)
 {
 	for (int i = 0; i < 4; i++)

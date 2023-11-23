@@ -49,3 +49,8 @@ void AMateria::setType(std::string const &type)
 {
 	this->_type = type;
 }
+
+void AMateria::use(ICharacter& target)
+{
+    std::cout << "Default use implementation for " << _type << " on " << target.getName() << std::endl;
+}

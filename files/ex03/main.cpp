@@ -10,36 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "AMateria.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "IMateriaSource.hpp"
+#include "ICharacter.hpp"
+#include "MateriaSource.hpp"
 
-int main(void)
+int main()
 {
-//	AAnimal animal;
-	AAnimal *zoo[10];
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	for (int i = 0; i < 10; i++)
-	{
-		if (i % 2 == 0)
-			zoo[i] = new Dog();
-		else
-			zoo[i] = new Cat();
-	}
+	ICharacter* me = new Character("me");
 
-	for (int i = 0; i < 10; i++)
-		zoo[i]->makeSound();
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 
-	for (int i = 0; i < 10; i++)
-		delete zoo[i];
+	ICharacter* bob = new Character("bob");
 
-	const AAnimal* j = new Dog();
-	const AAnimal* i = new Cat();
+	me->use(0, *bob);
+	me->use(1, *bob);
 
-	delete j;//should not create a leak
-	delete i;
+	delete bob;
+	delete me;
+	delete src;
 
-	return (0);
+	return 0;
 }
+

@@ -99,7 +99,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 		i++;
 	if (i >= 4 || !(this->_materia)[i])
 	{
-		std::cout << type << " materia does not exit\n";
+		std::cout << type << " materia does not exist\n";
 		return (NULL);
 	}
 	std::cout << "Materia " << type << " created\n";
